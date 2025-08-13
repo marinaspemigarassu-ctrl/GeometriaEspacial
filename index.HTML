@@ -1,0 +1,889 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometria Espacial na Construção Civil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .formula {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+            text-align: center;
+            margin: 1rem 0;
+        }
+        .example-box {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1rem 0;
+        }
+        .geometric-shape {
+            transition: transform 0.3s ease;
+        }
+        .geometric-shape:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <!-- Header -->
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">Geometria Espacial na Construção Civil</h1>
+            <p class="text-lg text-gray-600">Aplicações práticas de sólidos geométricos na engenharia e arquitetura</p>
+        </header>
+
+        <!-- Introdução -->
+        <section class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl shadow-lg p-8 mb-8 text-white">
+            <h2 class="text-3xl font-bold mb-6 text-center">📚 Introdução</h2>
+            <div class="max-w-4xl mx-auto">
+                <p class="text-lg mb-4 leading-relaxed">
+                    A geometria espacial é uma ferramenta fundamental na construção civil, permitindo aos profissionais da área 
+                    compreender, calcular e otimizar estruturas tridimensionais. Desde o planejamento inicial até a execução 
+                    final de uma obra, os conceitos geométricos estão presentes em cada etapa do processo construtivo.
+                </p>
+                <p class="text-lg mb-4 leading-relaxed">
+                    Este material apresenta de forma prática como os sólidos geométricos se relacionam diretamente com elementos 
+                    construtivos do nosso cotidiano: blocos de concreto (paralelepípedos), pilares e colunas (cilindros), 
+                    telhados (pirâmides), reservatórios (esferas e composições), entre outros.
+                </p>
+                <!-- Vídeo de Introdução -->
+                <div class="bg-white bg-opacity-20 rounded-lg p-4 mt-6 mb-6">
+                    <h3 class="font-bold text-xl mb-3 flex items-center">
+                        <span class="mr-2">📹</span>Vídeo: Introdução à Geometria Espacial
+                    </h3>
+                    <div class="aspect-video bg-gray-200 rounded-lg mb-3">
+                        <video controls class="w-full h-full rounded-lg" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%23e0e7ff'/%3E%3Ctext x='200' y='100' text-anchor='middle' fill='%234338ca' font-size='14'%3EIntrodução%3C/text%3E%3Ctext x='200' y='125' text-anchor='middle' fill='%234338ca' font-size='12'%3EGeometria Espacial%3C/text%3E%3C/svg%3E">
+                            <source src="videos/introducao.mp4" type="video/mp4">
+                            <source src="videos/introducao.webm" type="video/webm">
+                            <p class="text-white">Seu navegador não suporta vídeos HTML5.</p>
+                        </video>
+                    </div>
+                    <p class="text-sm text-white opacity-90">
+                        Visão geral sobre a importância da geometria espacial na construção civil e como ela se aplica no dia a dia dos profissionais.
+                    </p>
+                </div>
+
+                <div class="bg-white bg-opacity-20 rounded-lg p-4 mt-6">
+                    <h3 class="font-bold text-xl mb-3">🎯 Objetivos de Aprendizagem:</h3>
+                    <ul class="grid md:grid-cols-2 gap-2">
+                        <li class="flex items-center"><span class="mr-2">✓</span>Identificar sólidos geométricos na construção</li>
+                        <li class="flex items-center"><span class="mr-2">✓</span>Calcular áreas para revestimentos</li>
+                        <li class="flex items-center"><span class="mr-2">✓</span>Determinar volumes de materiais</li>
+                        <li class="flex items-center"><span class="mr-2">✓</span>Resolver problemas com formas compostas</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Parte 1 -->
+        <section class="bg-white rounded-xl shadow-lg p-8 mb-8">
+            <h2 class="text-3xl font-bold text-blue-800 mb-6 flex items-center">
+                <span class="bg-blue-100 rounded-full w-10 h-10 flex items-center justify-center mr-4 text-blue-800">1</span>
+                Conceitos Fundamentais e Sólidos Geométricos
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Elementos Básicos</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>Ponto, reta e plano no espaço</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>Vértices, arestas e faces</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>Prismas, pirâmides, cilindros, cones e esferas</li>
+                    </ul>
+                </div>
+                
+                <div class="flex justify-center items-center">
+                    <svg width="300" height="200" viewBox="0 0 300 200" class="geometric-shape">
+                        <!-- Paralelepípedo -->
+                        <g fill="#3B82F6" stroke="#1E40AF" stroke-width="2">
+                            <polygon points="50,150 150,150 150,50 50,50" fill="#60A5FA" opacity="0.8"/>
+                            <polygon points="150,150 200,100 200,0 150,50" fill="#3B82F6" opacity="0.9"/>
+                            <polygon points="50,50 150,50 200,0 100,0" fill="#1E40AF" opacity="0.7"/>
+                        </g>
+                        <text x="125" y="180" text-anchor="middle" class="text-sm font-semibold fill-gray-700">Paralelepípedo</text>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="formula">
+                Fórmula de Euler: V - A + F = 2
+            </div>
+
+            <!-- Vídeo Educativo - Parte 1 -->
+            <div class="bg-blue-50 rounded-lg p-4 mb-6">
+                <h4 class="font-semibold text-lg mb-3 text-blue-800 flex items-center">
+                    <span class="mr-2">📹</span>Vídeo: Conceitos Fundamentais de Geometria Espacial
+                </h4>
+                <div class="aspect-video bg-gray-200 rounded-lg mb-3">
+                    <video controls class="w-full h-full rounded-lg" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%23dbeafe'/%3E%3Ctext x='200' y='100' text-anchor='middle' fill='%231e40af' font-size='14'%3EConceitos Fundamentais%3C/text%3E%3Ctext x='200' y='125' text-anchor='middle' fill='%231e40af' font-size='12'%3EGeometria Espacial%3C/text%3E%3C/svg%3E">
+                        <source src="videos/conceitos-fundamentais.mp4" type="video/mp4">
+                        <source src="videos/conceitos-fundamentais.webm" type="video/webm">
+                        <p class="text-gray-600">Seu navegador não suporta vídeos HTML5.</p>
+                    </video>
+                </div>
+                <p class="text-sm text-blue-700">
+                    Assista para compreender os elementos básicos: pontos, retas, planos e a classificação dos sólidos geométricos na construção civil.
+                </p>
+            </div>
+
+            <div class="example-box">
+                <h4 class="font-bold text-lg mb-3">📐 Exemplo Aplicado</h4>
+                <p class="mb-2"><strong>Situação:</strong> Bloco de concreto 39cm × 19cm × 14cm</p>
+                <p class="mb-2"><strong>Questão:</strong> Quantos vértices, arestas e faces?</p>
+                <p><strong>Resposta:</strong> V = 8, A = 12, F = 6</p>
+            </div>
+        </section>
+
+        <!-- Parte 2 -->
+        <section class="bg-white rounded-xl shadow-lg p-8 mb-8">
+            <h2 class="text-3xl font-bold text-green-800 mb-6 flex items-center">
+                <span class="bg-green-100 rounded-full w-10 h-10 flex items-center justify-center mr-4 text-green-800">2</span>
+                Áreas de Superfícies
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Aplicações Práticas</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center"><span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Cálculo de revestimentos</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Estimativa de pintura</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Impermeabilização</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Conversão cm² → m²</li>
+                    </ul>
+                </div>
+                
+                <div class="flex justify-center items-center">
+                    <svg width="300" height="200" viewBox="0 0 300 200" class="geometric-shape">
+                        <!-- Cilindro -->
+                        <g fill="#10B981" stroke="#047857" stroke-width="2">
+                            <ellipse cx="150" cy="170" rx="60" ry="15" fill="#34D399" opacity="0.8"/>
+                            <rect x="90" y="50" width="120" height="120" fill="#10B981" opacity="0.9"/>
+                            <ellipse cx="150" cy="50" rx="60" ry="15" fill="#047857" opacity="0.7"/>
+                        </g>
+                        <text x="150" y="195" text-anchor="middle" class="text-sm font-semibold fill-gray-700">Coluna Cilíndrica</text>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="formula">
+                Área Lateral do Cilindro: A<sub>L</sub> = 2πrh
+            </div>
+
+            <!-- Vídeo Educativo - Parte 2 -->
+            <div class="bg-green-50 rounded-lg p-4 mb-6">
+                <h4 class="font-semibold text-lg mb-3 text-green-800 flex items-center">
+                    <span class="mr-2">📹</span>Vídeo: Cálculo de Áreas na Construção Civil
+                </h4>
+                <div class="aspect-video bg-gray-200 rounded-lg mb-3">
+                    <video controls class="w-full h-full rounded-lg" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%23dcfce7'/%3E%3Ctext x='200' y='100' text-anchor='middle' fill='%23047857' font-size='14'%3ECálculo de Áreas%3C/text%3E%3Ctext x='200' y='125' text-anchor='middle' fill='%23047857' font-size='12'%3ERevestimentos e Pintura%3C/text%3E%3C/svg%3E">
+                        <source src="videos/areas-superficies.mp4" type="video/mp4">
+                        <source src="videos/areas-superficies.webm" type="video/webm">
+                        <p class="text-gray-600">Seu navegador não suporta vídeos HTML5.</p>
+                    </video>
+                </div>
+                <p class="text-sm text-green-700">
+                    Aprenda a calcular áreas de superfícies para estimativas precisas de revestimentos, pintura e impermeabilização.
+                </p>
+            </div>
+
+            <div class="example-box">
+                <h4 class="font-bold text-lg mb-3">🎨 Exemplo Aplicado</h4>
+                <p class="mb-2"><strong>Situação:</strong> Coluna cilíndrica h=3m, d=30cm</p>
+                <p class="mb-2"><strong>Questão:</strong> Área lateral para pintura?</p>
+                <p><strong>Resposta:</strong> A<sub>L</sub> = 2π × 0,15 × 3 ≈ 2,83 m²</p>
+            </div>
+        </section>
+
+        <!-- Parte 3 -->
+        <section class="bg-white rounded-xl shadow-lg p-8 mb-8">
+            <h2 class="text-3xl font-bold text-purple-800 mb-6 flex items-center">
+                <span class="bg-purple-100 rounded-full w-10 h-10 flex items-center justify-center mr-4 text-purple-800">3</span>
+                Volume de Sólidos
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Estimativa de Materiais</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center"><span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>Volume de concreto</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>Quantidade de argamassa</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>Capacidade de reservatórios</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>Conversão m³ → litros</li>
+                    </ul>
+                </div>
+                
+                <div class="flex justify-center items-center">
+                    <svg width="300" height="200" viewBox="0 0 300 200" class="geometric-shape">
+                        <!-- Pilar cilíndrico -->
+                        <g fill="#8B5CF6" stroke="#5B21B6" stroke-width="2">
+                            <ellipse cx="150" cy="180" rx="40" ry="10" fill="#A78BFA" opacity="0.8"/>
+                            <rect x="110" y="40" width="80" height="140" fill="#8B5CF6" opacity="0.9"/>
+                            <ellipse cx="150" cy="40" rx="40" ry="10" fill="#5B21B6" opacity="0.7"/>
+                            <!-- Linhas de medida -->
+                            <line x1="200" y1="40" x2="200" y2="180" stroke="#EF4444" stroke-width="2"/>
+                            <text x="210" y="110" class="text-xs fill-red-600">2,5m</text>
+                        </g>
+                        <text x="150" y="195" text-anchor="middle" class="text-sm font-semibold fill-gray-700">Pilar Cilíndrico</text>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="formula">
+                Volume do Cilindro: V = πr²h
+            </div>
+
+            <!-- Vídeo Educativo - Parte 3 -->
+            <div class="bg-purple-50 rounded-lg p-4 mb-6">
+                <h4 class="font-semibold text-lg mb-3 text-purple-800 flex items-center">
+                    <span class="mr-2">📹</span>Vídeo: Volume de Materiais e Estimativas
+                </h4>
+                <div class="aspect-video bg-gray-200 rounded-lg mb-3">
+                    <video controls class="w-full h-full rounded-lg" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%23f3e8ff'/%3E%3Ctext x='200' y='100' text-anchor='middle' fill='%235b21b6' font-size='14'%3EVolume de Materiais%3C/text%3E%3Ctext x='200' y='125' text-anchor='middle' fill='%235b21b6' font-size='12'%3EConcreto e Argamassa%3C/text%3E%3C/svg%3E">
+                        <source src="videos/volume-solidos.mp4" type="video/mp4">
+                        <source src="videos/volume-solidos.webm" type="video/webm">
+                        <p class="text-gray-600">Seu navegador não suporta vídeos HTML5.</p>
+                    </video>
+                </div>
+                <p class="text-sm text-purple-700">
+                    Determine volumes de concreto, argamassa e outros materiais com precisão para otimizar custos e reduzir desperdícios.
+                </p>
+            </div>
+
+            <div class="example-box">
+                <h4 class="font-bold text-lg mb-3">🏗️ Exemplo Aplicado</h4>
+                <p class="mb-2"><strong>Situação:</strong> Pilar cilíndrico h=2,5m, r=0,20m</p>
+                <p class="mb-2"><strong>Questão:</strong> Volume de concreto necessário?</p>
+                <p><strong>Resposta:</strong> V ≈ 0,314 m³ ≈ 314 litros</p>
+            </div>
+        </section>
+
+        <!-- Parte 4 -->
+        <section class="bg-white rounded-xl shadow-lg p-8 mb-8">
+            <h2 class="text-3xl font-bold text-orange-800 mb-6 flex items-center">
+                <span class="bg-orange-100 rounded-full w-10 h-10 flex items-center justify-center mr-4 text-orange-800">4</span>
+                Situações Complexas e Composições
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Formas Compostas</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center"><span class="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>Junção de sólidos diferentes</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>Recortes e encaixes</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>Caixas d'água complexas</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>Elementos arquitetônicos</li>
+                    </ul>
+                </div>
+                
+                <div class="flex justify-center items-center">
+                    <svg width="300" height="220" viewBox="0 0 300 220" class="geometric-shape">
+                        <!-- Reservatório composto -->
+                        <g fill="#F97316" stroke="#C2410C" stroke-width="2">
+                            <!-- Base prismática -->
+                            <polygon points="75,180 225,180 225,120 75,120" fill="#FB923C" opacity="0.8"/>
+                            <polygon points="225,180 250,155 250,95 225,120" fill="#F97316" opacity="0.9"/>
+                            <polygon points="75,120 225,120 250,95 100,95" fill="#C2410C" opacity="0.7"/>
+                            
+                            <!-- Semiesfera superior -->
+                            <path d="M 100,95 Q 175,45 250,95" fill="#EA580C" opacity="0.8"/>
+                            <ellipse cx="175" cy="95" rx="75" ry="15" fill="#F97316" opacity="0.6"/>
+                        </g>
+                        <text x="175" y="210" text-anchor="middle" class="text-sm font-semibold fill-gray-700">Reservatório Composto</text>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="formula">
+                V<sub>prisma</sub> = A<sub>base</sub> × h &nbsp;&nbsp;|&nbsp;&nbsp; V<sub>meia-esfera</sub> = (2/3)πr³
+            </div>
+
+            <!-- Vídeo Educativo - Parte 4 -->
+            <div class="bg-orange-50 rounded-lg p-4 mb-6">
+                <h4 class="font-semibold text-lg mb-3 text-orange-800 flex items-center">
+                    <span class="mr-2">📹</span>Vídeo: Formas Compostas e Casos Complexos
+                </h4>
+                <div class="aspect-video bg-gray-200 rounded-lg mb-3">
+                    <video controls class="w-full h-full rounded-lg" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%23fed7aa'/%3E%3Ctext x='200' y='100' text-anchor='middle' fill='%23c2410c' font-size='14'%3EFormas Compostas%3C/text%3E%3Ctext x='200' y='125' text-anchor='middle' fill='%23c2410c' font-size='12'%3ECasos Complexos%3C/text%3E%3C/svg%3E">
+                        <source src="videos/situacoes-complexas.mp4" type="video/mp4">
+                        <source src="videos/situacoes-complexas.webm" type="video/webm">
+                        <p class="text-gray-600">Seu navegador não suporta vídeos HTML5.</p>
+                    </video>
+                </div>
+                <p class="text-sm text-orange-700">
+                    Resolva problemas com junção de sólidos diferentes, recortes, encaixes e elementos arquitetônicos complexos.
+                </p>
+            </div>
+
+            <div class="example-box">
+                <h4 class="font-bold text-lg mb-3">🏢 Exemplo Aplicado</h4>
+                <p class="mb-2"><strong>Situação:</strong> Reservatório = prisma (2m×2m×1,5m) + semiesfera (r=1m)</p>
+                <p class="mb-2"><strong>Questão:</strong> Volume total do reservatório?</p>
+                <p><strong>Resposta:</strong> V<sub>total</sub> ≈ 6 + 2,094 m³ ≈ 8,094 m³</p>
+            </div>
+        </section>
+
+
+
+        <!-- Resumo Visual -->
+        <section class="bg-gradient-to-r from-gray-800 to-gray-900 rounded-xl shadow-lg p-8 text-white">
+            <h2 class="text-3xl font-bold mb-6 text-center">Resumo das Aplicações</h2>
+            <div class="grid md:grid-cols-4 gap-6 text-center">
+                <div class="bg-white bg-opacity-10 rounded-lg p-4">
+                    <div class="text-3xl mb-2">📐</div>
+                    <h3 class="font-semibold mb-2">Conceitos Base</h3>
+                    <p class="text-sm">Elementos fundamentais e classificação</p>
+                </div>
+                <div class="bg-white bg-opacity-10 rounded-lg p-4">
+                    <div class="text-3xl mb-2">🎨</div>
+                    <h3 class="font-semibold mb-2">Áreas</h3>
+                    <p class="text-sm">Revestimentos e acabamentos</p>
+                </div>
+                <div class="bg-white bg-opacity-10 rounded-lg p-4">
+                    <div class="text-3xl mb-2">🏗️</div>
+                    <h3 class="font-semibold mb-2">Volumes</h3>
+                    <p class="text-sm">Estimativa de materiais</p>
+                </div>
+                <div class="bg-white bg-opacity-10 rounded-lg p-4">
+                    <div class="text-3xl mb-2">🏢</div>
+                    <h3 class="font-semibold mb-2">Composições</h3>
+                    <p class="text-sm">Formas complexas</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusão -->
+        <section class="bg-gradient-to-r from-green-600 to-teal-600 rounded-xl shadow-lg p-8 mb-8 text-white">
+            <h2 class="text-3xl font-bold mb-6 text-center">🎓 Conclusão</h2>
+            <div class="max-w-4xl mx-auto">
+                <p class="text-lg mb-4 leading-relaxed">
+                    A geometria espacial demonstra ser uma ferramenta indispensável para profissionais da construção civil, 
+                    proporcionando precisão nos cálculos e otimização de recursos. Através dos conceitos apresentados, é possível 
+                    realizar estimativas precisas de materiais, calcular áreas para acabamentos e determinar volumes necessários 
+                    para diferentes elementos construtivos.
+                </p>
+                <p class="text-lg mb-4 leading-relaxed">
+                    A aplicação prática destes conhecimentos resulta em maior eficiência nos projetos, redução de desperdícios 
+                    e melhor controle de custos. Desde um simples bloco de concreto até complexos reservatórios compostos, 
+                    a geometria espacial oferece as bases matemáticas necessárias para o sucesso de qualquer empreendimento.
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-6 mt-8">
+                    <div class="bg-white bg-opacity-20 rounded-lg p-4 text-center">
+                        <div class="text-3xl mb-2">💡</div>
+                        <h3 class="font-bold mb-2">Conhecimento</h3>
+                        <p class="text-sm">Base sólida em geometria espacial aplicada</p>
+                    </div>
+                    <div class="bg-white bg-opacity-20 rounded-lg p-4 text-center">
+                        <div class="text-3xl mb-2">⚡</div>
+                        <h3 class="font-bold mb-2">Eficiência</h3>
+                        <p class="text-sm">Cálculos precisos e otimização de recursos</p>
+                    </div>
+                    <div class="bg-white bg-opacity-20 rounded-lg p-4 text-center">
+                        <div class="text-3xl mb-2">🚀</div>
+                        <h3 class="font-bold mb-2">Sucesso</h3>
+                        <p class="text-sm">Projetos bem executados e economicamente viáveis</p>
+                    </div>
+                </div>
+
+                <!-- Vídeo de Conclusão -->
+                <div class="bg-white bg-opacity-20 rounded-lg p-4 mt-6 mb-6">
+                    <h3 class="font-bold text-xl mb-3 flex items-center justify-center">
+                        <span class="mr-2">📹</span>Vídeo: Conclusão e Aplicações Práticas
+                    </h3>
+                    <div class="aspect-video bg-gray-200 rounded-lg mb-3">
+                        <video controls class="w-full h-full rounded-lg" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%23d1fae5'/%3E%3Ctext x='200' y='100' text-anchor='middle' fill='%23047857' font-size='14'%3EConclusão%3C/text%3E%3Ctext x='200' y='125' text-anchor='middle' fill='%23047857' font-size='12'%3EAplicações Práticas%3C/text%3E%3C/svg%3E">
+                            <source src="videos/conclusao.mp4" type="video/mp4">
+                            <p class="text-white">Seu navegador não suporta vídeos HTML5.</p>
+                        </video>
+                    </div>
+                    <p class="text-sm text-white opacity-90">
+                        Síntese dos conhecimentos adquiridos e orientações para aplicação prática no dia a dia profissional.
+                    </p>
+                </div>
+
+                <div class="bg-white bg-opacity-20 rounded-lg p-6 mt-6">
+                    <h3 class="font-bold text-xl mb-3 text-center">📋 Principais Aprendizados</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold mb-2">Conceitos Fundamentais:</h4>
+                            <ul class="text-sm space-y-1">
+                                <li>• Identificação de sólidos geométricos</li>
+                                <li>• Aplicação da Fórmula de Euler</li>
+                                <li>• Relação com elementos construtivos</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">Aplicações Práticas:</h4>
+                            <ul class="text-sm space-y-1">
+                                <li>• Cálculo de áreas para revestimentos</li>
+                                <li>• Determinação de volumes de materiais</li>
+                                <li>• Resolução de formas compostas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+ </section>
+
+        <!-- Footer -->
+        <footer class="text-center mt-12 text-gray-600">
+            <p>Geometria Espacial aplicada à Construção Civil - Material Educativo</p>
+            <p class="text-sm mt-2">Desenvolvido para facilitar o aprendizado e aplicação prática dos conceitos geométricos</p>
+        </footer>
+    </div>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96e8cf2e73d8f633',t:'MTc1NTA5NDM2Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
+=======
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometria Espacial na Construção Civil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .formula {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+            text-align: center;
+            margin: 1rem 0;
+        }
+        .example-box {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1rem 0;
+        }
+        .geometric-shape {
+            transition: transform 0.3s ease;
+        }
+        .geometric-shape:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <!-- Header -->
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">Geometria Espacial na Construção Civil</h1>
+            <p class="text-lg text-gray-600">Aplicações práticas de sólidos geométricos na engenharia e arquitetura</p>
+        </header>
+
+        <!-- Introdução -->
+        <section class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl shadow-lg p-8 mb-8 text-white">
+            <h2 class="text-3xl font-bold mb-6 text-center">📚 Introdução</h2>
+            <div class="max-w-4xl mx-auto">
+                <p class="text-lg mb-4 leading-relaxed">
+                    A geometria espacial é uma ferramenta fundamental na construção civil, permitindo aos profissionais da área 
+                    compreender, calcular e otimizar estruturas tridimensionais. Desde o planejamento inicial até a execução 
+                    final de uma obra, os conceitos geométricos estão presentes em cada etapa do processo construtivo.
+                </p>
+                <p class="text-lg mb-4 leading-relaxed">
+                    Este material apresenta de forma prática como os sólidos geométricos se relacionam diretamente com elementos 
+                    construtivos do nosso cotidiano: blocos de concreto (paralelepípedos), pilares e colunas (cilindros), 
+                    telhados (pirâmides), reservatórios (esferas e composições), entre outros.
+                </p>
+                <!-- Vídeo de Introdução -->
+                <div class="bg-white bg-opacity-20 rounded-lg p-4 mt-6 mb-6">
+                    <h3 class="font-bold text-xl mb-3 flex items-center">
+                        <span class="mr-2">📹</span>Vídeo: Introdução à Geometria Espacial
+                    </h3>
+                    <div class="aspect-video bg-gray-200 rounded-lg mb-3">
+                        <video controls class="w-full h-full rounded-lg" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%23e0e7ff'/%3E%3Ctext x='200' y='100' text-anchor='middle' fill='%234338ca' font-size='14'%3EIntrodução%3C/text%3E%3Ctext x='200' y='125' text-anchor='middle' fill='%234338ca' font-size='12'%3EGeometria Espacial%3C/text%3E%3C/svg%3E">
+                            <source src="videos/introducao.mp4" type="video/mp4">
+                            <source src="videos/introducao.webm" type="video/webm">
+                            <p class="text-white">Seu navegador não suporta vídeos HTML5.</p>
+                        </video>
+                    </div>
+                    <p class="text-sm text-white opacity-90">
+                        Visão geral sobre a importância da geometria espacial na construção civil e como ela se aplica no dia a dia dos profissionais.
+                    </p>
+                </div>
+
+                <div class="bg-white bg-opacity-20 rounded-lg p-4 mt-6">
+                    <h3 class="font-bold text-xl mb-3">🎯 Objetivos de Aprendizagem:</h3>
+                    <ul class="grid md:grid-cols-2 gap-2">
+                        <li class="flex items-center"><span class="mr-2">✓</span>Identificar sólidos geométricos na construção</li>
+                        <li class="flex items-center"><span class="mr-2">✓</span>Calcular áreas para revestimentos</li>
+                        <li class="flex items-center"><span class="mr-2">✓</span>Determinar volumes de materiais</li>
+                        <li class="flex items-center"><span class="mr-2">✓</span>Resolver problemas com formas compostas</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Parte 1 -->
+        <section class="bg-white rounded-xl shadow-lg p-8 mb-8">
+            <h2 class="text-3xl font-bold text-blue-800 mb-6 flex items-center">
+                <span class="bg-blue-100 rounded-full w-10 h-10 flex items-center justify-center mr-4 text-blue-800">1</span>
+                Conceitos Fundamentais e Sólidos Geométricos
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Elementos Básicos</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>Ponto, reta e plano no espaço</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>Vértices, arestas e faces</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>Prismas, pirâmides, cilindros, cones e esferas</li>
+                    </ul>
+                </div>
+                
+                <div class="flex justify-center items-center">
+                    <svg width="300" height="200" viewBox="0 0 300 200" class="geometric-shape">
+                        <!-- Paralelepípedo -->
+                        <g fill="#3B82F6" stroke="#1E40AF" stroke-width="2">
+                            <polygon points="50,150 150,150 150,50 50,50" fill="#60A5FA" opacity="0.8"/>
+                            <polygon points="150,150 200,100 200,0 150,50" fill="#3B82F6" opacity="0.9"/>
+                            <polygon points="50,50 150,50 200,0 100,0" fill="#1E40AF" opacity="0.7"/>
+                        </g>
+                        <text x="125" y="180" text-anchor="middle" class="text-sm font-semibold fill-gray-700">Paralelepípedo</text>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="formula">
+                Fórmula de Euler: V - A + F = 2
+            </div>
+
+            <!-- Vídeo Educativo - Parte 1 -->
+            <div class="bg-blue-50 rounded-lg p-4 mb-6">
+                <h4 class="font-semibold text-lg mb-3 text-blue-800 flex items-center">
+                    <span class="mr-2">📹</span>Vídeo: Conceitos Fundamentais de Geometria Espacial
+                </h4>
+                <div class="aspect-video bg-gray-200 rounded-lg mb-3">
+                    <video controls class="w-full h-full rounded-lg" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%23dbeafe'/%3E%3Ctext x='200' y='100' text-anchor='middle' fill='%231e40af' font-size='14'%3EConceitos Fundamentais%3C/text%3E%3Ctext x='200' y='125' text-anchor='middle' fill='%231e40af' font-size='12'%3EGeometria Espacial%3C/text%3E%3C/svg%3E">
+                        <source src="videos/conceitos-fundamentais.mp4" type="video/mp4">
+                        <source src="videos/conceitos-fundamentais.webm" type="video/webm">
+                        <p class="text-gray-600">Seu navegador não suporta vídeos HTML5.</p>
+                    </video>
+                </div>
+                <p class="text-sm text-blue-700">
+                    Assista para compreender os elementos básicos: pontos, retas, planos e a classificação dos sólidos geométricos na construção civil.
+                </p>
+            </div>
+
+            <div class="example-box">
+                <h4 class="font-bold text-lg mb-3">📐 Exemplo Aplicado</h4>
+                <p class="mb-2"><strong>Situação:</strong> Bloco de concreto 39cm × 19cm × 14cm</p>
+                <p class="mb-2"><strong>Questão:</strong> Quantos vértices, arestas e faces?</p>
+                <p><strong>Resposta:</strong> V = 8, A = 12, F = 6</p>
+            </div>
+        </section>
+
+        <!-- Parte 2 -->
+        <section class="bg-white rounded-xl shadow-lg p-8 mb-8">
+            <h2 class="text-3xl font-bold text-green-800 mb-6 flex items-center">
+                <span class="bg-green-100 rounded-full w-10 h-10 flex items-center justify-center mr-4 text-green-800">2</span>
+                Áreas de Superfícies
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Aplicações Práticas</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center"><span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Cálculo de revestimentos</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Estimativa de pintura</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Impermeabilização</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Conversão cm² → m²</li>
+                    </ul>
+                </div>
+                
+                <div class="flex justify-center items-center">
+                    <svg width="300" height="200" viewBox="0 0 300 200" class="geometric-shape">
+                        <!-- Cilindro -->
+                        <g fill="#10B981" stroke="#047857" stroke-width="2">
+                            <ellipse cx="150" cy="170" rx="60" ry="15" fill="#34D399" opacity="0.8"/>
+                            <rect x="90" y="50" width="120" height="120" fill="#10B981" opacity="0.9"/>
+                            <ellipse cx="150" cy="50" rx="60" ry="15" fill="#047857" opacity="0.7"/>
+                        </g>
+                        <text x="150" y="195" text-anchor="middle" class="text-sm font-semibold fill-gray-700">Coluna Cilíndrica</text>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="formula">
+                Área Lateral do Cilindro: A<sub>L</sub> = 2πrh
+            </div>
+
+            <!-- Vídeo Educativo - Parte 2 -->
+            <div class="bg-green-50 rounded-lg p-4 mb-6">
+                <h4 class="font-semibold text-lg mb-3 text-green-800 flex items-center">
+                    <span class="mr-2">📹</span>Vídeo: Cálculo de Áreas na Construção Civil
+                </h4>
+                <div class="aspect-video bg-gray-200 rounded-lg mb-3">
+                    <video controls class="w-full h-full rounded-lg" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%23dcfce7'/%3E%3Ctext x='200' y='100' text-anchor='middle' fill='%23047857' font-size='14'%3ECálculo de Áreas%3C/text%3E%3Ctext x='200' y='125' text-anchor='middle' fill='%23047857' font-size='12'%3ERevestimentos e Pintura%3C/text%3E%3C/svg%3E">
+                        <source src="videos/areas-superficies.mp4" type="video/mp4">
+                        <source src="videos/areas-superficies.webm" type="video/webm">
+                        <p class="text-gray-600">Seu navegador não suporta vídeos HTML5.</p>
+                    </video>
+                </div>
+                <p class="text-sm text-green-700">
+                    Aprenda a calcular áreas de superfícies para estimativas precisas de revestimentos, pintura e impermeabilização.
+                </p>
+            </div>
+
+            <div class="example-box">
+                <h4 class="font-bold text-lg mb-3">🎨 Exemplo Aplicado</h4>
+                <p class="mb-2"><strong>Situação:</strong> Coluna cilíndrica h=3m, d=30cm</p>
+                <p class="mb-2"><strong>Questão:</strong> Área lateral para pintura?</p>
+                <p><strong>Resposta:</strong> A<sub>L</sub> = 2π × 0,15 × 3 ≈ 2,83 m²</p>
+            </div>
+        </section>
+
+        <!-- Parte 3 -->
+        <section class="bg-white rounded-xl shadow-lg p-8 mb-8">
+            <h2 class="text-3xl font-bold text-purple-800 mb-6 flex items-center">
+                <span class="bg-purple-100 rounded-full w-10 h-10 flex items-center justify-center mr-4 text-purple-800">3</span>
+                Volume de Sólidos
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Estimativa de Materiais</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center"><span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>Volume de concreto</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>Quantidade de argamassa</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>Capacidade de reservatórios</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>Conversão m³ → litros</li>
+                    </ul>
+                </div>
+                
+                <div class="flex justify-center items-center">
+                    <svg width="300" height="200" viewBox="0 0 300 200" class="geometric-shape">
+                        <!-- Pilar cilíndrico -->
+                        <g fill="#8B5CF6" stroke="#5B21B6" stroke-width="2">
+                            <ellipse cx="150" cy="180" rx="40" ry="10" fill="#A78BFA" opacity="0.8"/>
+                            <rect x="110" y="40" width="80" height="140" fill="#8B5CF6" opacity="0.9"/>
+                            <ellipse cx="150" cy="40" rx="40" ry="10" fill="#5B21B6" opacity="0.7"/>
+                            <!-- Linhas de medida -->
+                            <line x1="200" y1="40" x2="200" y2="180" stroke="#EF4444" stroke-width="2"/>
+                            <text x="210" y="110" class="text-xs fill-red-600">2,5m</text>
+                        </g>
+                        <text x="150" y="195" text-anchor="middle" class="text-sm font-semibold fill-gray-700">Pilar Cilíndrico</text>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="formula">
+                Volume do Cilindro: V = πr²h
+            </div>
+
+            <!-- Vídeo Educativo - Parte 3 -->
+            <div class="bg-purple-50 rounded-lg p-4 mb-6">
+                <h4 class="font-semibold text-lg mb-3 text-purple-800 flex items-center">
+                    <span class="mr-2">📹</span>Vídeo: Volume de Materiais e Estimativas
+                </h4>
+                <div class="aspect-video bg-gray-200 rounded-lg mb-3">
+                    <video controls class="w-full h-full rounded-lg" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%23f3e8ff'/%3E%3Ctext x='200' y='100' text-anchor='middle' fill='%235b21b6' font-size='14'%3EVolume de Materiais%3C/text%3E%3Ctext x='200' y='125' text-anchor='middle' fill='%235b21b6' font-size='12'%3EConcreto e Argamassa%3C/text%3E%3C/svg%3E">
+                        <source src="videos/volume-solidos.mp4" type="video/mp4">
+                        <source src="videos/volume-solidos.webm" type="video/webm">
+                        <p class="text-gray-600">Seu navegador não suporta vídeos HTML5.</p>
+                    </video>
+                </div>
+                <p class="text-sm text-purple-700">
+                    Determine volumes de concreto, argamassa e outros materiais com precisão para otimizar custos e reduzir desperdícios.
+                </p>
+            </div>
+
+            <div class="example-box">
+                <h4 class="font-bold text-lg mb-3">🏗️ Exemplo Aplicado</h4>
+                <p class="mb-2"><strong>Situação:</strong> Pilar cilíndrico h=2,5m, r=0,20m</p>
+                <p class="mb-2"><strong>Questão:</strong> Volume de concreto necessário?</p>
+                <p><strong>Resposta:</strong> V ≈ 0,314 m³ ≈ 314 litros</p>
+            </div>
+        </section>
+
+        <!-- Parte 4 -->
+        <section class="bg-white rounded-xl shadow-lg p-8 mb-8">
+            <h2 class="text-3xl font-bold text-orange-800 mb-6 flex items-center">
+                <span class="bg-orange-100 rounded-full w-10 h-10 flex items-center justify-center mr-4 text-orange-800">4</span>
+                Situações Complexas e Composições
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Formas Compostas</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center"><span class="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>Junção de sólidos diferentes</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>Recortes e encaixes</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>Caixas d'água complexas</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>Elementos arquitetônicos</li>
+                    </ul>
+                </div>
+                
+                <div class="flex justify-center items-center">
+                    <svg width="300" height="220" viewBox="0 0 300 220" class="geometric-shape">
+                        <!-- Reservatório composto -->
+                        <g fill="#F97316" stroke="#C2410C" stroke-width="2">
+                            <!-- Base prismática -->
+                            <polygon points="75,180 225,180 225,120 75,120" fill="#FB923C" opacity="0.8"/>
+                            <polygon points="225,180 250,155 250,95 225,120" fill="#F97316" opacity="0.9"/>
+                            <polygon points="75,120 225,120 250,95 100,95" fill="#C2410C" opacity="0.7"/>
+                            
+                            <!-- Semiesfera superior -->
+                            <path d="M 100,95 Q 175,45 250,95" fill="#EA580C" opacity="0.8"/>
+                            <ellipse cx="175" cy="95" rx="75" ry="15" fill="#F97316" opacity="0.6"/>
+                        </g>
+                        <text x="175" y="210" text-anchor="middle" class="text-sm font-semibold fill-gray-700">Reservatório Composto</text>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="formula">
+                V<sub>prisma</sub> = A<sub>base</sub> × h &nbsp;&nbsp;|&nbsp;&nbsp; V<sub>meia-esfera</sub> = (2/3)πr³
+            </div>
+
+            <!-- Vídeo Educativo - Parte 4 -->
+            <div class="bg-orange-50 rounded-lg p-4 mb-6">
+                <h4 class="font-semibold text-lg mb-3 text-orange-800 flex items-center">
+                    <span class="mr-2">📹</span>Vídeo: Formas Compostas e Casos Complexos
+                </h4>
+                <div class="aspect-video bg-gray-200 rounded-lg mb-3">
+                    <video controls class="w-full h-full rounded-lg" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%23fed7aa'/%3E%3Ctext x='200' y='100' text-anchor='middle' fill='%23c2410c' font-size='14'%3EFormas Compostas%3C/text%3E%3Ctext x='200' y='125' text-anchor='middle' fill='%23c2410c' font-size='12'%3ECasos Complexos%3C/text%3E%3C/svg%3E">
+                        <source src="videos/situacoes-complexas.mp4" type="video/mp4">
+                        <source src="videos/situacoes-complexas.webm" type="video/webm">
+                        <p class="text-gray-600">Seu navegador não suporta vídeos HTML5.</p>
+                    </video>
+                </div>
+                <p class="text-sm text-orange-700">
+                    Resolva problemas com junção de sólidos diferentes, recortes, encaixes e elementos arquitetônicos complexos.
+                </p>
+            </div>
+
+            <div class="example-box">
+                <h4 class="font-bold text-lg mb-3">🏢 Exemplo Aplicado</h4>
+                <p class="mb-2"><strong>Situação:</strong> Reservatório = prisma (2m×2m×1,5m) + semiesfera (r=1m)</p>
+                <p class="mb-2"><strong>Questão:</strong> Volume total do reservatório?</p>
+                <p><strong>Resposta:</strong> V<sub>total</sub> ≈ 6 + 2,094 m³ ≈ 8,094 m³</p>
+            </div>
+        </section>
+
+
+
+        <!-- Resumo Visual -->
+        <section class="bg-gradient-to-r from-gray-800 to-gray-900 rounded-xl shadow-lg p-8 text-white">
+            <h2 class="text-3xl font-bold mb-6 text-center">Resumo das Aplicações</h2>
+            <div class="grid md:grid-cols-4 gap-6 text-center">
+                <div class="bg-white bg-opacity-10 rounded-lg p-4">
+                    <div class="text-3xl mb-2">📐</div>
+                    <h3 class="font-semibold mb-2">Conceitos Base</h3>
+                    <p class="text-sm">Elementos fundamentais e classificação</p>
+                </div>
+                <div class="bg-white bg-opacity-10 rounded-lg p-4">
+                    <div class="text-3xl mb-2">🎨</div>
+                    <h3 class="font-semibold mb-2">Áreas</h3>
+                    <p class="text-sm">Revestimentos e acabamentos</p>
+                </div>
+                <div class="bg-white bg-opacity-10 rounded-lg p-4">
+                    <div class="text-3xl mb-2">🏗️</div>
+                    <h3 class="font-semibold mb-2">Volumes</h3>
+                    <p class="text-sm">Estimativa de materiais</p>
+                </div>
+                <div class="bg-white bg-opacity-10 rounded-lg p-4">
+                    <div class="text-3xl mb-2">🏢</div>
+                    <h3 class="font-semibold mb-2">Composições</h3>
+                    <p class="text-sm">Formas complexas</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusão -->
+        <section class="bg-gradient-to-r from-green-600 to-teal-600 rounded-xl shadow-lg p-8 mb-8 text-white">
+            <h2 class="text-3xl font-bold mb-6 text-center">🎓 Conclusão</h2>
+            <div class="max-w-4xl mx-auto">
+                <p class="text-lg mb-4 leading-relaxed">
+                    A geometria espacial demonstra ser uma ferramenta indispensável para profissionais da construção civil, 
+                    proporcionando precisão nos cálculos e otimização de recursos. Através dos conceitos apresentados, é possível 
+                    realizar estimativas precisas de materiais, calcular áreas para acabamentos e determinar volumes necessários 
+                    para diferentes elementos construtivos.
+                </p>
+                <p class="text-lg mb-4 leading-relaxed">
+                    A aplicação prática destes conhecimentos resulta em maior eficiência nos projetos, redução de desperdícios 
+                    e melhor controle de custos. Desde um simples bloco de concreto até complexos reservatórios compostos, 
+                    a geometria espacial oferece as bases matemáticas necessárias para o sucesso de qualquer empreendimento.
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-6 mt-8">
+                    <div class="bg-white bg-opacity-20 rounded-lg p-4 text-center">
+                        <div class="text-3xl mb-2">💡</div>
+                        <h3 class="font-bold mb-2">Conhecimento</h3>
+                        <p class="text-sm">Base sólida em geometria espacial aplicada</p>
+                    </div>
+                    <div class="bg-white bg-opacity-20 rounded-lg p-4 text-center">
+                        <div class="text-3xl mb-2">⚡</div>
+                        <h3 class="font-bold mb-2">Eficiência</h3>
+                        <p class="text-sm">Cálculos precisos e otimização de recursos</p>
+                    </div>
+                    <div class="bg-white bg-opacity-20 rounded-lg p-4 text-center">
+                        <div class="text-3xl mb-2">🚀</div>
+                        <h3 class="font-bold mb-2">Sucesso</h3>
+                        <p class="text-sm">Projetos bem executados e economicamente viáveis</p>
+                    </div>
+                </div>
+
+                <!-- Vídeo de Conclusão -->
+                <div class="bg-white bg-opacity-20 rounded-lg p-4 mt-6 mb-6">
+                    <h3 class="font-bold text-xl mb-3 flex items-center justify-center">
+                        <span class="mr-2">📹</span>Vídeo: Conclusão e Aplicações Práticas
+                    </h3>
+                    <div class="aspect-video bg-gray-200 rounded-lg mb-3">
+                        <video controls class="w-full h-full rounded-lg" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%23d1fae5'/%3E%3Ctext x='200' y='100' text-anchor='middle' fill='%23047857' font-size='14'%3EConclusão%3C/text%3E%3Ctext x='200' y='125' text-anchor='middle' fill='%23047857' font-size='12'%3EAplicações Práticas%3C/text%3E%3C/svg%3E">
+                            <source src="videos/conclusao.mp4" type="video/mp4">
+                            <p class="text-white">Seu navegador não suporta vídeos HTML5.</p>
+                        </video>
+                    </div>
+                    <p class="text-sm text-white opacity-90">
+                        Síntese dos conhecimentos adquiridos e orientações para aplicação prática no dia a dia profissional.
+                    </p>
+                </div>
+
+                <div class="bg-white bg-opacity-20 rounded-lg p-6 mt-6">
+                    <h3 class="font-bold text-xl mb-3 text-center">📋 Principais Aprendizados</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold mb-2">Conceitos Fundamentais:</h4>
+                            <ul class="text-sm space-y-1">
+                                <li>• Identificação de sólidos geométricos</li>
+                                <li>• Aplicação da Fórmula de Euler</li>
+                                <li>• Relação com elementos construtivos</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">Aplicações Práticas:</h4>
+                            <ul class="text-sm space-y-1">
+                                <li>• Cálculo de áreas para revestimentos</li>
+                                <li>• Determinação de volumes de materiais</li>
+                                <li>• Resolução de formas compostas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+ </section>
+
+        <!-- Footer -->
+        <footer class="text-center mt-12 text-gray-600">
+            <p>Geometria Espacial aplicada à Construção Civil - Material Educativo</p>
+            <p class="text-sm mt-2">Desenvolvido para facilitar o aprendizado e aplicação prática dos conceitos geométricos</p>
+        </footer>
+    </div>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96e8cf2e73d8f633',t:'MTc1NTA5NDM2Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
+>>>>>>> f2afe30be12616b03f2293ce61d65a4b2d80a312
